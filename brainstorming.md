@@ -50,7 +50,8 @@ means.
 
 ### Core type classes
 
-Functor, Monad, Applicative
+* Functor, Monad, Applicative
+* Num
 
 ## Other Potential Deep-Dive Tracks
 
