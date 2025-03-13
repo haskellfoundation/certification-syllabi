@@ -7,6 +7,7 @@ Dump unfiltered topic ideas here
 ### Expressions and basic syntax
 
 Includes things like space for function application, understanding the most core operator precedence rules, etc.
+
 Possibly includes the `.` and `$` operators.
 
 ### Types
@@ -15,9 +16,9 @@ Includes type signatures, type variables, type class constraints, etc.
 
 ### Defining your own data
 
-Type constructors vs data constructors
-Newtypes
-Type aliases
+* Type constructors vs data constructors
+* Newtypes
+* Type aliases
 
 ### Type classes
 
