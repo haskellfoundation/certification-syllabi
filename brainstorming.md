@@ -19,6 +19,28 @@ Includes type signatures, type variables, type class constraints, etc.
 * Type constructors vs data constructors
 * Newtypes
 * Type aliases
+* [Phantom types](https://wiki.haskell.org/index.php?title=Phantom_type)
+
+```haskell
+-- Context: this following type declaration is structured in such a way that is can use a phantom type.
+-- Q: Select the part of this declaration that can be used for the phantom type (1)
+type BSMessage a = ByteString
+type Score = Int
+type Seed = StdGen
+
+-- Q: Convert the type signatures of `bsToInt` and `bsToStdGen` and `getData` so that they use phantom types. (3)
+bsToInt :: ByteString -> Score 
+bsToInt = decode
+
+bsToStdGen :: ByteString -> Seed
+bsToStdGen = mkStdGen . decode
+
+getData :: Connection -> (ByteString -> a) -> IO a
+getData conn hdlr = hdlr <$> recvSomeData conn -- example func, idk, probably put in decent sized body.
+
+-- probably better questions available on the market
+```
+
 
 ### Type classes
 
@@ -60,3 +82,9 @@ means.
 ### Database Libraries
 
 ### Web Frameworks
+
+## Question Types
+* Multiple choice
+* Fill in the blanks
+* Build this thing
+* Rewrite this
