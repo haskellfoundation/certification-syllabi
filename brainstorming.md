@@ -2,6 +2,12 @@
 
 Dump unfiltered topic ideas here
 
+## Existing Resources
+
+[Learn You a Haskell](https://github.com/sdiehl/wiwinwlh)
+[Stephen Diehl's What I Wish I Knew When Learning Haskell](https://github.com/sdiehl/wiwinwlh)
+[Well-Typed Introduction to Haksell](https://teaching.well-typed.com/intro/)
+
 ## Core Language
 
 ### Expressions and basic syntax
