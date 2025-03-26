@@ -7,6 +7,7 @@ Dump unfiltered topic ideas here
 - [Learn You a Haskell](https://github.com/sdiehl/wiwinwlh)
 - [Stephen Diehl's What I Wish I Knew When Learning Haskell](https://github.com/sdiehl/wiwinwlh)
 - [Well-Typed Introduction to Haksell](https://teaching.well-typed.com/intro/)
+- [Haskell: Uma introdução à programação funcional (Brazilian Portuguese)](https://www.casadocodigo.com.br/products/livro-haskell)
 
 ## Core Language
 
@@ -41,6 +42,7 @@ Specific data types:
 - `Maybe`
 - `Either`
 - tuples
+- Recursive types in general (a binary tree, for example)
 
 Specifically, being able to:
 
@@ -112,7 +114,7 @@ means.
 
 ### Core type classes
 
-* Functor, Monad, Applicative
+* Functor, Monad, Applicative, Monoid, Semigroup
 * Num
 
 Also (of course):
@@ -131,22 +133,26 @@ In particular:
 
 - Performance characteristics of lists
 - Finite maps, sets
-- Possibly arrays / vectors
+- Possibly arrays / vectors (Alexandre: I don't think this is a good idea for a basic exam).
 
 ### Specific monads
 
-- `State`
+- `State`, `Writer`
 - `Maybe` / `Either` / `Error`
 
 ### Basic design questions
 
 - Reasoning about / preferring totality of functions
 - Use of dedicated datatypes vs strings
+- Uses of eta-reduction
 - ...
 
 ### Equational reasoning / laws
 
-?
+- Functor, Applicative and Monad laws
+- Monoid and Semigroup laws
+- Counterexamples: Reasoning if a given datatype is an Applicative but not a Monad, for example.
+
 
 ### What about language quirks?
 
