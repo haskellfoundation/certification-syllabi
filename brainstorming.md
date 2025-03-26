@@ -83,6 +83,14 @@ spelling out the kinds of types, but I think it makes sense to talk about
 well-formedness of types, e.g. reason about the fact that `Maybe -> Int` is
 ill-formed, or `instance Functor [Int]` does not make sense.
 
+DB: These two well-formedness examples are exactly why I think it might be worth
+considering kinds for inclusion in the beginner syllabus / test. If you know the
+kind of the relevant types, it becomes trivial to answer why those examples are
+not well-formed. If you don't know about kinds, you won't have the language to
+really discuss the question. Should this concept be considered beginner vs
+intermediate? I don't know. But I do consider Monad, Functor, and MonadTrans to
+be essential concepts for commercial Haskell use.
+
 ### Lists, List comprehensions, etc
 
 ### Laziness
