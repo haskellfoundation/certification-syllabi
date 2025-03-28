@@ -54,7 +54,7 @@ Specifically, being able to:
 
 Non-examples:
 
-- understand parametricity (I think it's very useful, but I wouldn't make it a requirement)
+- understand parametricity (I think it's very useful, but I wouldn't make it a requirement) (BM: I think it's required, but I also think people often understand it without knowing they understanding it, so it's hard to talk about)
 
 ### Defining your own data
 
@@ -161,6 +161,7 @@ In particular:
 - Monoid and Semigroup laws
 - Counterexamples: Reasoning if a given datatype is an Applicative but not a Monad, for example.
 
+BM: It's important to be able to know what a Haskell program is going to do and equational reasoning is the tool we use everywhere. I think people who use Haskell well are people who fundamentally understand this type of algebraic evaluation of programs. But what would it look like to write it on a syllabus?
 
 ### What about language quirks?
 
