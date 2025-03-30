@@ -31,7 +31,6 @@ type BSMessage a = ByteString
 
 type Score = Int
 type Seed = StdGen
-data ParseError = ParseError
 data ReplayState = { getFinalScore :: Score } -- implementation unimportant
 
 receiveSomeData :: Connection -> IO ByteString
@@ -61,7 +60,7 @@ initGameReplay :: StdGen -> ReplayState
 openConnection :: IO Socket -- implementation unimportant
 processReplayState :: ReplayState -> StdGen -> ReplayState -- implete
 
-Q: Use the functions defined above to get the score and seed for the `ReplayState`. Finally compare the scores of the final `ReplayState` with the one made by `processReplayState` (10)
+-- Q: Use the functions defined above to get the score and seed for the `ReplayState`. Finally compare the scores of the final `ReplayState` with the one made by `processReplayState` (10)
 
 checkReplay :: IO Bool
 checkReplay = do
@@ -76,6 +75,8 @@ checkReplay = do
   -- todo: Compare scores from final state
   --
 
+Q: Write one potential benefit of using Phantoms
+A: Open-ended answer: "Makes it so that I can't use bsToStdGen on data received by recvScore because the phantom type tracks which data I am receiving at a certain time" or something to that line.
   
 -- probably better questions available on the market
 ```
