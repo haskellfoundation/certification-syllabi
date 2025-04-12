@@ -49,8 +49,8 @@ countChar = undefined
 -- counter :: _
 -- a) (Char -> Int -> Int)
 -- b) (Int -> Char -> Int)
--- c) (Char -> Int -> Char)
--- d) (Int  -> Char -> Char)
+-- c) (Char -> Int)
+-- d) (Int  -> Char)
 
 -- Q4: Implement `countCharF` using `foldr` with a `where` binding for `counter`
 
