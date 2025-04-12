@@ -54,6 +54,6 @@ countChar = undefined
 
 -- Q4: Implement `countCharF` using `foldr` with a `where` binding for `counter`
 
-countChar = _todo
+countCharF = _todo
   where counter = _todo
 ```
