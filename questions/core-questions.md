@@ -16,7 +16,7 @@ foo = do
   handleFileContents s
 ```
 
-2. Higher order functions
+2. Complete the function to a spec. (Will require QuickCheck/testing).
 ```haskell
 
 readFile :: FilePath -> IO String
