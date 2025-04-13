@@ -25,7 +25,7 @@ Specific examples:
 - operator sections
 - operator priority declarations (`infix` / `infixl` / `infixr`)
 - pattern bindings
-- `deriving`
+- `deriving` and [Deriving Strategies](https://www.youtube.com/live/NEUbp2CsuNg) - strategies maybe advanced?
 
 Non-examples:
 
