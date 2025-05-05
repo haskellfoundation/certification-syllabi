@@ -44,7 +44,7 @@ data G f a = G (f a)
 data H f g a = H (f (g a))
 data I a f b = I a
 data J f = J f (J f)
-data K f a = KP a | KF (f (M f a))
+data K f a = KP a | KF (f (K f a))
 data L r f a = L ((a -> f r) -> f r)
 data M t m a = M (t m a)
 ```
