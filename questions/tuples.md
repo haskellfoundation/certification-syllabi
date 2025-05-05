@@ -16,3 +16,10 @@ frst (a, _ , _) = a
 -- B) `fst` only works on tuples with two elements and `frst` works with triplets (Y)
 -- C) They are the same
 ```
+
+# Q3: Select the relevant differences between a tuple of n elements and a list of length n elements.
+
+```haskell
+-- A) Tuples can contain elements of different types.
+-- B) -- INSERT MORE --
+```
