@@ -53,8 +53,8 @@ data M t m a = M (t m a)
 
 For each of the following type class definitions:
 
-1. Provide the kind of the type parameter.
-2. Suggest a concrete type (constructor) as a potential instance of this type class.
+1. Provide (infer) the kind of the type parameter.
+2. Suggest a concrete type (constructor) as a potential instance of this type class (purely based on the kind).
 
 ```haskell
 -- difficulty increases progressively (more or less)
