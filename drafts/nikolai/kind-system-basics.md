@@ -24,15 +24,16 @@ For each of the following declarations, answer these questions:
 2. Give 2 example values (where possible)
   of the defined type with specific types
   (or type constructors) used for the type parameters.
-3. Determine the form of a (partially applied) type constructor
-  suitable for a `Functor` instance (based only on the kind),
-  or specify why it is impossible.
+3. Is it possible to define `instance Functor` for the defined data type?
+  If so, specify what to write instead of `...` in `instance Functor ... where` for the defined data type,
+  such that kinds are valid for this class instance.
+  If it's not possible to provide a well-kinded instance, explain why.
 
 ```haskell
 -- Group 1 (easier)
 data A a = A a
-data B a = B a (S a)
-data C a b = C a (T b a) | CN
+data B a = B a (B a)
+data C a b = C a (C b a) | CN
 data D a b = D a
 data E a = E
 data F = F
