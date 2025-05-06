@@ -121,6 +121,11 @@ I avoided using the word "monad" here because I think beginner Haskellers can
 start writing code in IO without needing to have any idea what "monad" actually
 means.
 
+#### Converting bind (>>=) into do-notation and vice versa
+
+(TO: In addition to this, I do believe that every Haskeller should be able to convert between the two as they should understand that do is syntactic sugar for bind.)
+
+
 ### Core type classes
 
 * Functor, Monad, Applicative, Monoid, Semigroup
@@ -178,4 +183,8 @@ BM: It's important to be able to know what a Haskell program is going to do and 
 ### Database Libraries
 
 ### Web Frameworks
+
+### Graphics/Rendering
+
+### UI / GUI
 
