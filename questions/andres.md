@@ -172,7 +172,7 @@ f2 :: Int -> a -> (Int, a)
 What is the (most general / inferred) type of `[f1, f2]`? If you think it is
 a type error, explain why.
 
-A: `[f1, f2] :: Int -> Int -> (Int, Int)`
+A: `[f1, f2] :: [Int -> Int -> (Int, Int)]`
 
 R: Tests basic reasoning capabilities about polymorphism and unification.
 
