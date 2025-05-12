@@ -14,7 +14,7 @@ In this block we expect the following prerequisites:
 
 We **do not** expect the following:
 
-- Strictness annotations
+- Strictness annotations and irrefutable patterns
 - Boxed vs unboxed types
 - `GeneralizedNewtypeDeriving` extension
 - `TypeSynonymInstances` extension
