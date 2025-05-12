@@ -9,6 +9,7 @@ enumerate people = xs
         xs :: []
         xs = undefined
         -- xs = zip [1..] people
+        -- or equivalent
 ```
 
 ## Q2: What does this expression return?
