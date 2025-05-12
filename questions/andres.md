@@ -15,7 +15,8 @@ General ideas:
 
 # Type declarations and type aliases
 
-Q: What is the problem with the following code? Describe two
+Q: The following type declaration fails to compile and produces an error. 
+What is the reason for the failure?  Describe two
 different methods in which the problem can be addressed:
 ```
 type WithExplanation a = (Explanation, a)
