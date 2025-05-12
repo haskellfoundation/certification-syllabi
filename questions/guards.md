@@ -1,5 +1,5 @@
 
-## Q1: Rewrite this expression using guards ( | ) 
+## Q: Rewrite this expression using guards ( | ) 
 
 ```haskell
 onUserAnswer :: Char -> Maybe Bool
@@ -16,7 +16,7 @@ onUserAnswer answer =
 --     | otherwise = Nothing
 ```
 
-## Q2: Rewrite this expression using a case expression. 
+## Q: Rewrite this expression using a case expression. 
 
 ```haskell
 onUserAnswer :: Char -> Maybe Bool
@@ -31,4 +31,24 @@ onUserAnswer answer =
 --   'y' -> Just True
 --   'n' -> Just False
 --   _ -> Nothing
+```
+
+## Q: Which of these represents the correct syntax for a method using guards ( | )?
+
+```haskell
+
+safeDivide x y =
+    | 0 == y = Nothing
+    | otherwise = Just (x / y)
+
+
+safeDivide x y
+    | 0 == y = Nothing
+    | otherwise = Just (x / y)
+
+
+safeDivide x y =
+    | y == 0 = Nothing
+    | otherwise = Just (x / y)
+
 ```
