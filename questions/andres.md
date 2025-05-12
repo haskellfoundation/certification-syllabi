@@ -156,8 +156,8 @@ f2 (Right a) = Right a
 f3 (Left a)  = Right a
 f3 (Right a) = Left a
 
-f4 (Left a)  = Left a
-f4 (Right a) = Left a
+f4 (Left a)  = Right a
+f4 (Right a) = Right a
 ```
 
 R: Test the understanding of basic principles of parametricity.
