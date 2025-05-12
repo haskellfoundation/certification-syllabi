@@ -139,6 +139,36 @@ probably be fine.)
 R: Tests if one can use `data` syntax. Test if one can model simple concepts as
 a datatype precisely.
 
+---
+
+Q: Given a type of binary trees
+```
+data Tree a =
+    Leaf a
+  | Node (Tree a) (Tree a)
+```
+define a type |Path| that describes possible paths from the root
+to leaves.
+
+A:
+Option 1:
+```
+data Path =
+    GoLeft Path
+  | GoRight Path
+  | End
+```
+
+Option 2:
+```
+type Path = [Bool]
+```
+
+Of course, there are more options between these two extremes.
+
+R: Tests if one can understand binary trees and model a relatively simple concept
+as a user-defined type.
+
 # Parametric polymorphism
 
 Q: How many different total functions are there of type `Either a a` -> `Either a a`?
@@ -192,8 +222,60 @@ R: Tests basic reasoning capabilities about polymorphism and unification.
 
 ---
 
+Q: If you have
+```
+f1 :: a   -> b -> (a, b)
+f2 :: Int -> c
+```
+Does `if True then f1 else f2` typecheck? If so, then what is the inferred
+type?
+
+A: `if True then f1 else f2 :: Int -> b -> (Int, b)`
+
+R: Tests basic reasoning capabilities about polymorphism and unification.
+This is a variant of the previous question that does not use lists of functions,
+in case that is considered a bit obscure.
+
+---
+
 Q: What is the type of `map . map`?
 
 A: `map . map :: (a -> b) -> [[a]] -> [[b]]`
 
 R: Tests somewhat more advanced reasoning capabilities about polymorphism and unification.
+
+---
+
+Q: What can you say about a function of type
+```
+mystery :: Either Int Bool -> a
+```
+without knowing its implementation?
+
+A: It must crash or loop.
+
+R: Test basic understanding of parametricity.
+
+---
+
+Q: If you have two functions:
+```
+f1 ::         ... some type involving the type variable a ...
+f2 :: Eq a => ... the same type involving the type variable a ...
+```
+Does every implementation of `f1` also typecheck at the type of `f2`?
+Does every implementation of `f2` also typecheck at the type of `f1`?
+Or neither?
+
+A: Every implementation of `f1` also typechecks at the type `f2`. The
+`Eq a` constraints gives us extra options what we can do with elements
+of type `a`, but we don't have to use them.
+
+The other direction does not hold. If we actually make use of equality
+on `a` in the definition of `f2`, then it won't typecheck at the type
+of `f1`.
+
+R: Test basic understanding about the meaning of type class constraints.
+(Perhaps this is not a good fit for the section on parametric polymorphism,
+but it's a question about parametric vs. type-class polymorphism.)
+
