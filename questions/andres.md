@@ -56,7 +56,8 @@ and partial application of tuples.
 
 ---
 
-Q: What is the problem with the following code?
+Q: The following code fails to compile and produces an error.
+Identify the error.
 Describe two different methods in which
 this code can be fixed?
 ```
