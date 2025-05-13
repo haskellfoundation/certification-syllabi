@@ -53,7 +53,7 @@ foo :: (Int -> [a]) -> [a]
 foo f = reverse (f 5)  
 ```
 
-Choose the right assertion about `foo.
+Choose the right assertion about `foo`.
 
 - a) The value `foo take` has the type `[a]`
 - b) The function `foo` do not compile.
