@@ -22,13 +22,13 @@ Consider the following snippet
 ```haskell
 -- Group 1 (easier)
 s :: (a -> b -> c) -> (a -> b) -> a -> c
-s x y z = x(z)(y(z))
+s = \x y z -> x z (y z)
 
 k :: x -> y -> x
-k x _ = x
+k = \x _ -> x
 ```
 
-Evaluate the following expression to its normal form `s k k`.
+Evaluate the following expression until you can evaluate no more `s k k`.
 
 - a) `\x y -> y`
 - b) `\x y -> x`
@@ -44,6 +44,11 @@ Consider the function take from Prelude.
 
 ```haskell
 take :: Int -> [a] -> [a]
+```
+And the type for `flip`:
+
+```haskell
+flip :: (a -> b -> c) -> b -> a -> c
 ```
 
 Also, consider the following expression
@@ -73,7 +78,7 @@ foo :: (t -> t) -> t -> t
 foo f x = f (f x)
 ```
 
-Choose the assertion that gives the `incorrect` answer.
+Choose all of the expressions that would evaluate to `True`.
 
 - a) foo reverse [1,2,3] == [1,2,3]
 - b) foo id () == ()
