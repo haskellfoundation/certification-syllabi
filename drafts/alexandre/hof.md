@@ -55,7 +55,7 @@ foo f = reverse (f 5)
 
 Choose the right assertion about `foo.
 
-- a) The value `foo take` have the type `[a]`
+- a) The value `foo take` has the type `[a]`
 - b) The function `foo` do not compile.
 - c) The value `foo (take 5)` have the type `[Int]`
 - d) The expression `foo (flip take [])` typechecks. 
