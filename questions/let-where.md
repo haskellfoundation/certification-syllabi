@@ -26,7 +26,7 @@ hellos = sayHiToPeople ["Alice", "Bob", "Charlie"]
 ## Q: Use let bindings or where expressions to factor out common subexpressions
 
 ```haskell
--- Thanks Nickolay!
+-- Thanks Nikolai!
 magicNames :: (String, String) -> [String]
 magicNames (alice, bob) = reverse
  [ "magic" ++ alice , reverse ("magic" ++ bob), "magic" ++ (alice ++ bob)]
