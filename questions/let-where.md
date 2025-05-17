@@ -65,5 +65,105 @@ runApp a = \resp -> do
 --             in app
 ```
 
+## Q: Match together the functionally equivalent definitions.
+(These are already paired together, scramble them, introduce inconsistencies)
+
+```haskell
+a1 x = let y = x + 1 in y * y
+
+a2 x = y * y where y = x + 1
+
+a3 x = (\b -> b * b)(x + 1)
+
+--------------------------------------------------
+
+b1 x = let 
+    y = x + 5
+    z = y + 5
+    in (x + y + z) == 20
+
+b2 x = (x + y + z) == 20
+    where y = x + 5
+          z = y + 5
+
+--------------------------------------------------
+
+c1 a b el = let 
+    y = take 3 a ++ take 4 b
+    z = drop 3 a ++ drop 4 b
+    numEls =  length . filter (== el)
+    in (numEls y, numEls z)
+
+c2 a b el = (numEls y, numEls z)
+    where y = take 3 a ++ take 4 b
+          z = drop 3 a ++ drop 4 b
+          numEls =  length . filter (== el)
+
+--------------------------------------------------
+
+d1 = let a = 3 + 4 in a * a
+d2 = (3 + 4) * (3 + 4)
+d3 = a where a = (3 + 4) * (3 + 4)
+
+--------------------------------------------------
+
+e1 = let x = 5 in \y -> x + y
+e2 = \y -> x + y
+    where x = 5
+
+--------------------------------------------------
+
+f1 x y = let (a, b) = (x + 1, y - 1) in a * b
+f2 x y = a * b where (a, b) = (x + 1, y - 1)
+
+--------------------------------------------------
+
+data Person = Person { name :: String, age :: Int }
+
+g1 x = let mkHarry = Person "Harry"
+        in mkHarry x
+
+g2 x = mkHarry x
+    where mkHarry = Person "Harry"
+
+g3 x = let namer name = Person name x
+        in namer
+
+g4 name x = Person name x
+
+g5 x = namer
+    where namer = (\f x y -> f y x) Person x
+
+
+-- Select all of the definitions that will return the double the sum of a list of integers
+sum1 xs = foldr summer 0 xs
+    where summer x acc = (2*x)  + acc
+
+sum2 xs = foldr (+) 0 . doubleAll
+    where doubleAll zs = fmap (*2) zs
+
+sum3 xs = let doubled = fmap (*2) xs
+           in sum doubled
+
+sum4 xs = let twos = [2, 2 ..] -- (or repeat 2)
+           in sum $ zipWith (*) twos xs
+
+sum5 xs = sum doubled
+    where doubled = [ 2 * x | x <- xs ]
+
+
+sum6 xs = let 
+    summed = sum xs
+    in 2 * summed
+
+--------------------------------------------------
+
+    
+```
+
+
+
+## Q: Which of the following display the correct Haskell syntax (for let and where bindings)
+
 
 Nested where and lets? Correct syntax: Making sure people don't do `where ... in`.
