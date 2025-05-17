@@ -7,6 +7,21 @@ sumNumbers xs =
 
 -- sumNumbers xs = foldr someFunction 0 xs
 --     where someFunction x acc = x + acc
+
+
+compute = let 
+    a = 5
+    b = let
+        c = 2
+        in c + a
+    in b * 3
+
+-- compute = b * 3
+--     where b = c + a
+--           a = 5
+--           c = 2
+
+            
 ```
 
 ## Q: Implement the `hiSayer` function so that prints "Hi [[person]]!" to each person in the list of people and discards the resulting list.
@@ -37,12 +52,6 @@ magicNames (alice, bob) = reverse
 --  [ magic alice , reverse (magic bob), magic (alice ++ bob)]
 --   where
 --     magic name = "magic" ++ name
-```
-
-```haskell
-
-
-
 ```
 
 ## Q: Use a let ... in or where expression to rewrite the function expressed in runApp
@@ -133,9 +142,13 @@ g4 name x = Person name x
 
 g5 x = namer
     where namer = (\f x y -> f y x) Person x
+```
 
+--------------------------------------------------
 
--- Select all of the definitions that will return the double the sum of a list of integers
+## Q: Select all of the definitions that will return the double the sum of a list of integers
+```haskell 
+-- These should all be correct -- obsfuscate/damage as much as needed
 sum1 xs = foldr summer 0 xs
     where summer x acc = (2*x)  + acc
 
@@ -155,11 +168,11 @@ sum5 xs = sum doubled
 sum6 xs = let 
     summed = sum xs
     in 2 * summed
-
+```
 --------------------------------------------------
 
     
-```
+
 
 
 
@@ -204,4 +217,19 @@ ex8 is js = let ks = map toUpper is
             where js = map toLower js
             in ks ++ js
 -- ERROR: where must be used after declaration
+
+
+ex9 x = y
+    where y = x * x in 
 ```
+
+## Q: True/False: The `in` keyword is required when using where.
+-- False
+
+## Q: When does the `in` keyword need to be used in Haskell?
+A) When using `let` in a top-level function definition (Y)
+B) In a do block
+C) When using bind (>>=)
+D) After instantiating anonymous function with (\)
+E) To describe the elements of a Foldable data structure (i.e. for_ el in xs)
+F) To check for membership of an item in a data structure (i.e. x in xs)
