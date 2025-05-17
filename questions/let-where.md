@@ -163,7 +163,45 @@ sum6 xs = let
 
 
 
-## Q: Which of the following display the correct Haskell syntax (for let and where bindings)
+## Q: Which of the following display the correct Haskell syntax (for let and where bindings) and if not correct, describe the error.
+
+```haskell
+ex1 = let x = 5
+          y = x + 2
+-- error needs in before `y`
+-- in y = x + 2
+
+ex2 = let x = 5; y = 2 in x * y
+
+ex3 = let x = 4 in let y = 9 in x + y
+
+ex4 = let x = 3 y = 4 = in x + y 
+-- error requires semicolon or newline + alignment
+
+ex5 = let x = 8
+          y = 5
+       in x + y * (x * y)
 
 
-Nested where and lets? Correct syntax: Making sure people don't do `where ... in`.
+ex6 = let x = 6
+       in y + 5
+       where y = 4
+
+
+ex7 xs = 10 + z
+    where z = let a = filter (== 'z') xs
+          z = length z
+-- ERROR: z defined twice
+
+ex7 xs = 10 + z
+    where y = let a = filter (== 'z') xs
+        z = length y
+
+-- ERROR: Misalignment on definition for z
+
+
+ex8 is js = let ks = map toUpper is
+            where js = map toLower js
+            in ks ++ js
+-- ERROR: where must be used after declaration
+```
