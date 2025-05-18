@@ -214,8 +214,8 @@ ex7 xs = 10 + z
 
 
 ex8 is js = let ks = map toUpper is
-            where js = map toLower js
-            in ks ++ js
+            where ls = map toLower js
+            in ks ++ ls
 -- ERROR: where must be used after declaration
 
 
