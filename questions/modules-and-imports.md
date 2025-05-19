@@ -65,3 +65,21 @@ data Person = Person { age :: Int, name :: String }
 -- F) import Person (Person) 
 ```
 
+
+## Q: The function intercalate is from the module Data.List. What is the result of calling `f`?
+
+```haskell 
+
+import qualified Data.List as List
+
+joinwords xss = intercalate "-" xss
+
+f = joinwords ["We","must","be","joined","together"]
+
+```
+
+A) "We-must-be-joined-together"
+B) "We - must - be - joined - together"
+C) Compiler error
+D) ["We","-","must","-","be","-","joined","-","together"]
+
