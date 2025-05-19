@@ -171,11 +171,6 @@ sum6 xs = let
 ```
 --------------------------------------------------
 
-    
-
-
-
-
 ## Q: Which of the following display the correct Haskell syntax (for let and where bindings) and if not correct, describe the error.
 
 ```haskell

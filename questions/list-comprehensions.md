@@ -22,3 +22,29 @@ expression = [1, 3 ..]
 -- B) A repeating list of alternating 1 and 3s
 -- C) A list starting with 1 and then an infinite list of 3s
 ```
+
+### Q3: Write/select the list comprehension(s) which is equivalent to the following expression
+
+```haskell
+
+ex1 = [1,3,5 .. ]
+-- ex1 = [ x | x <- [1,2..], (x `mod` 2) /= 0 ]
+
+ex2 = [2,4,6 .. ]
+-- ex2 = [ x | x <- [1,2..], (x `mod` 2) == 0 ]
+
+ex3 = [7,7,7 .. ]
+-- ex3, trivial, pointless, several ways: [ const 7 x | x <- [1..]]
+
+ex4 = map (*5) [1,2,3,4,5]
+-- ex4 = [ x*5 | x <- [1..5]]
+
+ex5 xs = filter (not isVowel) xs
+        where vowel x = x `notElem` "aieou"
+
+-- ex5 xs = [ x | x <- xs, x `notElem` "aeiou" ]
+
+
+ex6 = [(1,1),(1,2),(2,1),(2,2)]
+-- ex6 = [(x,y) | x <- [1,2], y <- [1,2]] 
+```
